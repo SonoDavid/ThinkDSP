@@ -830,6 +830,14 @@ class Wave:
         # TODO: track down other uses of this function and check them
         self.ts += shift
 
+    def stretch(self, factor):
+        """ Stretches the wave to give it another frequency
+        
+        factor: stretch factor
+        """
+        self.ts *= factor
+        self.framerate /= factor
+
     def roll(self, roll):
         """Rolls this wave by the given number of locations.
         """
